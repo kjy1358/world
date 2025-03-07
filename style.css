@@ -94,6 +94,20 @@ main {
     text-decoration: underline;
 }
 
+/* 더 읽기 버튼 */
+.post button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post button:hover {
+    background-color: #0056b3;
+}
+
 /* 사이드바 */
 .sidebar {
     flex: 1;

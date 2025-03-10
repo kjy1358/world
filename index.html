@@ -13,13 +13,24 @@
             <div class="bio">
                 <h2>neko</h2>
                 <p>안녕하세요!
-                    저는 웹 개발에 관심이 많은 사람입니다. 이 블로그에서는 제 개발 일지와 프로젝트들을 공유하려고 합니다. 함께 배우고 성장해 나가요!</p>
+                    저는 웹 개발에 관심이 많은 사람입니다. 이 블로그에서는 제 개발 일지와 프로젝트들을 공유하려고 합니다. 함께 배우고 성장해 나갑시다!</p>
             </div>
         </div>
         <div class="content">
             <h1>블로그 제목</h1>
-            <p>여기에 블로그 내용이 들어갑니다. 다양한 주제를 다룰 예정입니다!</p>
+            <div id="post-list">
+                <!-- 포스트 리스트가 여기에 표시됩니다 -->
+            </div>
+            <div class="post-form">
+                <h2>새 포스트 작성</h2>
+                <form id="new-post-form">
+                    <input type="text" id="post-title" placeholder="포스트 제목" required>
+                    <textarea id="post-content" placeholder="포스트 내용" required></textarea>
+                    <button type="submit">포스트 작성</button>
+                </form>
+            </div>
         </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const newPostForm = document.getElementById('new-post-form');
     const postTitle = document.getElementById('post-title');
     const postContent = document.getElementById('post-content');
+    const postImage = document.getElementById('post-image');
 
     // 포스트 데이터를 저장할 배열
     let posts = [];
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
             postElement.innerHTML = `
                 <h2>${post.title}</h2>
                 <p>${post.content}</p>
+                ${post.image ? `<img src="${post.image}" alt="포스트 이미지">` : ''}
                 <button class="delete-btn" data-index="${index}">삭제</button>
             `;
             postList.appendChild(postElement);
@@ -45,9 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
         const title = postTitle.value;
         const content = postContent.value;
+        const image = postImage.value;
 
         // 새 포스트 객체 생성 후 배열에 추가
-        const newPost = { title, content };
+        const newPost = { title, content, image };
         posts.push(newPost);
 
         // 로컬 스토리지에 저장
@@ -59,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 폼 초기화
         postTitle.value = '';
         postContent.value = '';
+        postImage.value = '';
     });
 
     // 포스트 삭제 함수

@@ -25,8 +25,18 @@ document.addEventListener('DOMContentLoaded', function() {
             postElement.innerHTML = `
                 <h2>${post.title}</h2>
                 <p>${post.content}</p>
+                <button class="delete-btn" data-index="${index}">삭제</button>
             `;
             postList.appendChild(postElement);
+        });
+
+        // 삭제 버튼에 이벤트 리스너 추가
+        const deleteButtons = document.querySelectorAll('.delete-btn');
+        deleteButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                deletePost(index);
+            });
         });
     }
 
@@ -50,6 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
         postTitle.value = '';
         postContent.value = '';
     });
+
+    // 포스트 삭제 함수
+    function deletePost(index) {
+        posts.splice(index, 1);
+        localStorage.setItem('posts', JSON.stringify(posts));
+        renderPosts();
+    }
 
     // 페이지 로드 시 포스트 데이터를 불러와서 렌더링
     loadPosts();

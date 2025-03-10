@@ -81,6 +81,12 @@
     line-height: 1.6;
 }
 
+.post img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
 /* 삭제 버튼 스타일 */
 .delete-btn {
     position: absolute;
